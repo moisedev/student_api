@@ -24,6 +24,7 @@ class StudentsApiController extends AbstractController
      */
     public function index(): Response
     {
+        header("Access-Control-Allow-Origin: *");
         $students = $this->studentRepository->findAll();
         return $this->json($students);
     }
@@ -33,6 +34,7 @@ class StudentsApiController extends AbstractController
      */
     public function insert(): Response
     {
+        header("Access-Control-Allow-Origin: *");
         $results = $this->studentManager->fetchStudentFromApi();
         return $this->json($results);
     }
